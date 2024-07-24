@@ -1,190 +1,4 @@
-// # include<iostream>
-// # include<string>
-// # include<vector>
-// # include<algorithm>
-// # include<map>
-// using namespace std;
-
-// // Member class
-// class Member{
-// public:
-//     // map<string, string> members;
-//     vector<pair<string, string>>members;
-//     string member_name;
-//     string join_date;
-//     Member():members(members), member_name(member_name), join_date(join_date){}
-
-//     // register a new member
-//     bool reg_member(string member_name, string join_date){
-//         if(!find_member(member_name)){
-//             members.push_back({member_name, join_date});
-//             // members.insert(member_name, join_date);
-//             return true;
-//         }
-//         return false;
-//     }
-
-//     // cancel a membership
-//     bool cancel_member(string member_name){
-//         if(find_member(member_name)){
-//             for(const auto &i : members){
-//                 if(i.first == member_name){
-//                     members.erase(i);
-//                 }
-//             }
-//             // members.erase(member_name, date);
-//             // members.erase(member_name);
-//             return true;
-//         }
-//         return false;
-//     }
-
-//     // returns true if member alread exists
-//     bool find_member(string member_name){
-//         for(auto i : members){
-//             if(i.first == member_name) return true;
-//         }
-//         // if(members.find(member_name) != members.end()) return true;
-//         return false;
-//     }
-// };
-
-
-
-// class Book{
-// public:
-//     vector<vector<string>> book_matrix;
-//     string book_name;
-//     string date_of_check_out;
-//     string date_of_return;
-//     map<string, int> book_map;
-//     Book():book_matrix(book_matrix), book_name(book_name), date_of_check_out(date_of_check_out), date_of_return(date_of_return), book_map(book_map){}
-
-//     // return true if book exists
-//     bool search_book(string book_name){
-//         if(book_map.find(book_name) != book_map.end()) return true;
-//         return false;
-//     }
-
-//     // 
-//     bool check_out(string member_name, string book_name){
-//         Member member;
-//         if(member.find_member(member_name) and search_book(book_name)) return true;
-//         return false;
-//     }
-
-//     bool find_in_map(string book_name){
-//         if(book_map.find(book_name) != book_map.end()){
-//             return true;
-//         }
-//         return false;
-//     }
-
-//     bool return_book(string book_name){
-//         if(find_in_map(book_name) and !search_book(book_name))return true;
-//         return false;
-//     }
-
-//     // return the indices of the book location 
-//     int find_pos(string book_name){
-//         for(int i = 0; i < 5; i++){
-//             for(int j = 0; j < 5; j++){
-//                 if(book_matrix[i][j] == book_name) return i, j;
-//             }
-//         }
-//         return -1, -1;
-//     }
-// };
-
-
-
-// class Library_management{
-// public:
-//     Member member;
-//     Book book;
-//     void run() {
-//         while (true) {
-//             cout << "\n1.Register Member\n" << "2.Cancel Member\n" << "3.Search Book\n" << "4.Check Out Book\n" << "5.Return Book/n" << "6.Exit" << "Enter menu id : ";
-//             int choice;
-//             cin >> choice;
-//             if (choice == 1) {
-//                 string member_name, date_of_join;
-//                 cin >> member_name >> date_of_join;
-//                 if(member.reg_member(member_name, date_of_join)){
-//                         cout << "SUCCESS, Registered " << member_name << endl;
-//                 }
-//                 else{
-//                     cout << "FAILURE, Already registered " << member_name << ", " << date_of_join;
-//                 }
-//             } 
-//             else if (choice == 2) {
-//                 string member_name;
-//                 cin >> member_name;
-//                 if(member.cancel_member(member_name)){
-//                     cout << "SUCCESS, Membership cancelled " << member_name;
-//                 }
-//                 else{
-//                     cout << "FAILURE, Not registered member" << member_name;
-//                 }
-//             } 
-//             else if (choice == 3) {
-//                 string book_name;
-//                 cin >> book_name;
-//                 if(book.search_book(book_name)){
-//                     int row, col;
-//                     row, col = book.find_pos(book_name);
-//                     cout << "SUCCESS, Found " << book_name << ", " << row << ", " << col;
-//                 }
-//                 else{
-//                     cout << "FAILURE, " << book_name << "Not found";
-//                 }
-//             }
-//             else if (choice == 4) {
-//                 string member_name, book_name;
-//                 cin >> member_name >> book_name;
-//                 if(book.check_out(member_name, book_name)){
-//                     cout << "SUCCESS, " << member_name << " borrowed " << book_name;
-//                 }
-//                 else if(!member.find_member(member_name)){
-//                     cout << "FAILURE, " << member_name << "is not a registered member";
-//                 }
-//                 else if(book.search(book_name)){
-//                     cout << "FAILURE " << book_name << " is already returned";
-//                 }
-//                 else{
-//                     cout << "FAILURE, " << book_name << "is not found";
-//                 }
-//             }
-//             else if (choice == 5) {
-//                 string book_name, date_of_return;
-//                 cin >> book_name >> date_of_return;
-//                 if(book.return_book(book_name, date_of_return)){
-//                     cout << "SUCCESS, Returned " << book_name;
-//                 }
-//                 else if(book.find_in_map(book_name)){
-//                     cout << 
-//                 }
-//             }
-//             else if (choice == 6) {
-//                 break;
-//             } 
-//             else {
-//                 cout << "Invalid choice. Try again.\n";
-//             }
-//         }
-//     }
-
-// };
-
-// int main(){
-//     Library_management library;
-//     library.run();
-//     return 0;
-// }
-
-
-
-
+// include headers
 #include <iostream>
 #include <string>
 #include <vector>
@@ -195,6 +9,7 @@ using namespace std;
 // Member class
 class Member {
 public:
+    // vector pair to store member_name and join_date respectively
     vector<pair<string, string>> members;
 
     // Register a new member
@@ -237,11 +52,14 @@ public:
 // Book class
 class Book {
 public:
+    // Initialization of book self as a matrix(considering 5 rows and 5 columns)
     vector<vector<string>> book_matrix = vector<vector<string>>(5, vector<string>(5, ""));
+    // maintaning a map for checking availability of books
     map<string, bool> book_map;
 
+    // Default Constructor
     Book() {
-        // List of book names
+        // List of book names(Initialization)
         vector<string> book_names = {"TheStranger", "CrimeandPunishment", "Meditations", "Metamorphosis", "TheIdiot", 
                                      "BrothersKaramazov", "TheWingsofFire", "BeyondGoodandEvil", "ThusSpokeZarathustra", "TheRepublic",
                                      "Dune", "HarryPotter", "TheHamlet", "Frankenstein", "NormalPeople",
@@ -262,12 +80,12 @@ public:
         }
     }
 
-    // Return true if book exists
+    // Return true if book exists, false if not present or book already checked out
     bool search_book(const string& book_name) {
         return (book_map.find(book_name) != book_map.end() && book_map[book_name]);
     }
 
-    // Check out a book for a member
+    // Check out (i.e member borrows) a book for a member
     bool check_out(Member& member, const string& member_name, const string& book_name) {
         if (member.find_member(member_name) && search_book(book_name) && book_map[book_name]) {
             book_map[book_name] = false; // Mark book as checked out
@@ -299,9 +117,11 @@ public:
 // Library_management class
 class Library_management {
 public:
+    // Creating objects for Member and Book classes
     Member member;
     Book book;
 
+    // Input format no spaces for a given variable's value(i.e; Instead of "The Republic", input "TheRepublic" to avoid infinite loop)
     void run() {
         cout << "**** Welcome to the Library Management System ****\n";
         while (true) {
@@ -358,6 +178,7 @@ public:
 };
 
 int main() {
+    // Create ann object for Library_management
     Library_management library;
     library.run();
     return 0;
